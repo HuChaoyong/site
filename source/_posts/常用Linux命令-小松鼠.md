@@ -10,7 +10,7 @@ tags:
 catagories:
 - Linux
 ---
-> 日常使用Ubuntu中，使用频率较高的命令
+> 日常使用Ubuntu中，使用频率较高的命令(基础得不能再基础了)
 >
 
 # rm

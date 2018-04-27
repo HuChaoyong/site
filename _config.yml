@@ -83,19 +83,19 @@ featured-condition-size: 1              # A tag will be featured if the size of 
 
 ## Friends
 friends: [
-    {
-        title: "Bean Tech",
-        href: "http://beantech.org"
-    },{
-        title: "Kaijun's Blog",
-        href: "http://blog.kaijun.rocks"
-    },{
-        title: "Hux Blog",
-        href: "http://huangxuan.me"
-    },{
-        title: "It Helps SEO",
-        href: "#"
-    }
+    # {
+    #     title: "Bean Tech",
+    #     href: "http://beantech.org"
+    # },{
+    #     title: "Kaijun's Blog",
+    #     href: "http://blog.kaijun.rocks"
+    # },{
+    #     title: "Hux Blog",
+    #     href: "http://huangxuan.me"
+    # },{
+    #     title: "It Helps SEO",
+    #     href: "#"
+    # }
 ]
 
 
@@ -139,7 +139,7 @@ home_posts_tag: true # show posts tags
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: YYYY年MM月DD
 time_format: HH:mm:ss
 
 # Pagination
