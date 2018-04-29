@@ -26,17 +26,24 @@ scp -P 32627 ./jdk-8u151-linux-x64.tar.gz root@23.111.222.333:~/Downloads
 scp -P 32627 root@23.111.222.333:~/Downloads/1.jpeg ./
 ```
 
-# tar (zip or unzip file)
+# tar and zip (zip or unzip file)
 
 ```bash
 # unzip jdk file to the '/usr/program'  directory
 # if you don't special the directory, it will unzip in current directory
 tar xzvf jdk-8u151-linux-x64.tar.gz -C /usr/program
+zip jdk-8u151.zip -d /usr/program
 
 # zip the directory 'bootstrap' to 'btsp.tar.gz'
 tar czvf btsp.tar.gz bootstrap
+zip -r btsp.zip bootstrap
 # zip the all '*.jpg' file to 'picture.tar.gz'
 tar czvf picture.tar.gz *.jpg
+```
+# wget 
+
+```bash
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 ```
 
 # [Live Demo]()

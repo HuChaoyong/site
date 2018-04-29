@@ -18,6 +18,9 @@ tags:
 
 > download from [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/index.html), I use java8
 ```bash
+# before you install java, you should uninstall 'openjdk'
+sudo apt-get remove openjdk*
+sudo apt-get autoremove
 # unzip file on '/usr/progrm' directory
 tar xzvf jdk-8u151-linux-x64.tar.gz -C/usr/program
 
@@ -34,7 +37,7 @@ export PATH=${JAVA_HOME}/bin:$PATH
 ```
 > active the setting (激活配置)
 ```bash
-sudo source ~/.bashrc
+source ~/.bashrc
 # check
 java -version
 ```
@@ -109,4 +112,42 @@ source /etc/profile
 node -v
 npm -v
 ```
+
+# shadowsocks (ss)
+```bash
+# install shadowsocks
+sudo apt-get update 
+sudo apt-get install python-gevent python-pip
+pip install shadowsocks
+
+# set config
+sudo vi /usr/program/ss.json
+# copy flow lines
+{
+    "server":"23.106.129.100",
+    "server_port":1994,
+    "local_port":1080,
+    "password":"your service psd",
+    "timeout":600,
+    "method":"rc4-md5"
+}
+# save ss.json ,then run ss
+sslocal -c /etc/ss.json
+```
+there are two method,  1. PAC  2. global
+open system setting => Network => Network proxy
+ 1. PAC , download pac file from [here](/download/pac.rar), unzip you will get a 'autoproxy.pac' file
+ on the 'Network proxy' setting page, select 'Automatic'
+ type the  'autoproxy.pac' path. like
+ ```bash
+ file:///usr/program/autoproxy.pac
+ ```
+ then Apply system wide
+
+ 2. global
+ on the 'Network proxy' setting page, select 'Manual'
+ on the 'Socks Host' line, type like flow, '1080' is your 'local_port' in ss.json file
+host: 127.0.0.1
+port: 1080
+ then Apply system wide
 

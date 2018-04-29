@@ -78,3 +78,17 @@ sudo apt-get install -f
 # uninstall
 sudo apt-get purege netease-cloud-music
 ```
+
+# boot u-disk make
+```bash
+# get u-disk path, like '/dev/sdc1'
+sudo fdisk -l
+
+# clean u-disk
+sudo umount /dev/sdc1
+sudo mkfs.vfat /dev/sdc1 -I
+
+# use dd make it, if there is a 'ubuntu18.04.iso' file on current directory 
+sudo dd if=ubuntu18.04.iso of=/dev/sdc1
+# maybe waite for 10 minutes, it done
+```
