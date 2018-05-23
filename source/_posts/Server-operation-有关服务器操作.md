@@ -14,7 +14,7 @@ catagories:
 # ssh 连接服务器
 ```bash
 # login the remote server by port 32627, ssh default port is 22
-> ssh -p 32627 root@23.111.222.333
+> ssh -p 32627 root@23.106.122.111
 # then input the password
 ```
 
@@ -29,10 +29,11 @@ scp -P 32627 root@23.111.222.333:~/Downloads/1.jpeg ./
 # tar and zip (zip or unzip file)
 
 ```bash
-# unzip jdk file to the '/usr/program'  directory
+# unzip jdk file to the '/usr/program'  directory,if not set '-C' or '-d' means
+# unzip in current directory
 # if you don't special the directory, it will unzip in current directory
 tar xzvf jdk-8u151-linux-x64.tar.gz -C /usr/program
-zip jdk-8u151.zip -d /usr/program
+unzip jdk-8u151.zip -d /usr/program
 
 # zip the directory 'bootstrap' to 'btsp.tar.gz'
 tar czvf btsp.tar.gz bootstrap
@@ -46,6 +47,4 @@ tar czvf picture.tar.gz *.jpg
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 ```
 
-# [Live Demo]()
----
 ![pic](./dh.jpg)

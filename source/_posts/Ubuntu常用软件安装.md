@@ -8,10 +8,8 @@ tags:
 - Linux
 - Ubuntu
 ---
-> 编程常用软件安装
+> 常用软件安装
 -------------------------
-# [Live Demo]()
----
 ![pic](./back.png)
 
 # java
@@ -41,7 +39,6 @@ source ~/.bashrc
 # check
 java -version
 ```
-
 # tomcat
 
 > downlaod from [Apache tomcat](https://tomcat.apache.org/download-80.cgi), I use tomcat8
@@ -112,6 +109,12 @@ source /etc/profile
 node -v
 npm -v
 ```
+>
+> if there are some permission like
+> "checkPermissions Missing write access to /home/hcy/node/lib/node_module"
+```
+sudo chown -R $(whoami) /home/hcy/node/
+```
 
 # shadowsocks (ss)
 ```bash
@@ -151,3 +154,29 @@ host: 127.0.0.1
 port: 1080
  then Apply system wide
 
+# nginx
+```bash
+# install 
+sudo apt-get update
+sudo apt-get install nginx
+# show and check config file
+nginx -t
+# start
+nginx -c /etc/nginx/nginx.conf
+# stop
+pkill -9 nginx
+```
+> the config file is on 'nginx.conf'
+> config the 80 proxy to 8080(tomcat)
+```
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm
+	server_name 127.0.0.1:8080;
+	location / {
+		proxy_pass http://127.0.0.1:8080;
+	}
+}
+```
