@@ -10,7 +10,6 @@ tags:
 ---
 > 常用软件安装
 -------------------------
-![pic](./back.png)
 
 # java
 
@@ -139,7 +138,7 @@ sslocal -c /etc/ss.json
 ```
 there are two method,  1. PAC  2. global
 open system setting => Network => Network proxy
- 1. PAC , download pac file from [here](/download/pac.rar), unzip you will get a 'autoproxy.pac' file
+ 1. PAC , download pac file from [here](/download/autoproxy.zip), unzip you will get a 'autoproxy.pac' file
  on the 'Network proxy' setting page, select 'Automatic'
  type the  'autoproxy.pac' path. like
  ```bash
@@ -180,3 +179,75 @@ server {
 	}
 }
 ```
+
+> config the static file to some subdomain,
+> like in the director  /www/api
+```
+server {
+    listen 80;
+    server_name api.domains.com;
+    root /www/api;
+    index index.html;
+    location / {
+	root /www/api;
+	index index.html;
+    }
+}
+```
+
+> config the proxy some request , like google map
+
+```
+server {
+	listen	80;
+	server_name gmap.domain.com;
+	client_max_body_size 20M;
+	fastcgi_buffers 4 4K;
+	sendfile on;
+	send_timeout 600s;
+	
+	location /kh {
+		proxy_redirect off;
+		proxy_set_header Host khm2.google.com;
+		proxy_set_header X-Real-IP $remote_addr;
+		proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+		proxy_pass http://khm2.google.com;
+	}
+        location /vt {
+                proxy_redirect off;
+                proxy_set_header Host mt0.google.cn;
+                proxy_set_header X-Real-IP $remote_addr;
+                proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_pass http://mt0.google.cn;
+        }
+
+}
+
+```
+# mount (disk)
+
+> look disk info, find disk sign like '/dev/sda1'
+```
+sudo fdisk -l
+```
+>find file system type
+```
+sudo blkid
+```
+> edit config
+```
+sudo vi /etc/fstab
+```
+> in the last line ,add flow
+```
+/dev/sda1		/media/disk		ntfs	defaults	0 	0
+> /dev/sda1  is disk sign
+> /media/disk		where the disk mount
+> ntfs		file system
+>0 (first)	disk backup
+>0 (second)	disk check (0 means don't backup  don't check
+```
+# mount (disk)
+
+> 1. download idea ultimate
+> 2. type  active by server 'http://btsha.com:41017'
