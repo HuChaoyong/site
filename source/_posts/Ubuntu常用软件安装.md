@@ -247,7 +247,7 @@ sudo vi /etc/fstab
 >0 (first)	disk backup
 >0 (second)	disk check (0 means don't backup  don't check
 ```
-# mount (disk)
+# idea
 
 > 1. download idea ultimate
 > 2. type  active by server 'http://btsha.com:41017'

@@ -48,3 +48,13 @@ tar czvf picture.tar.gz *.jpg
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 ```
+
+# rdesktop
+**rdesktop is a tool, which use for connect windows server.
+```
+# connect default (full screen), alt + ctrl + enter   quit full screen
+>rdesktop -f 192.168.1.3
+
+# connect and set resolution
+>rdesktop -g 1366*768 192.168.1.3
+```
