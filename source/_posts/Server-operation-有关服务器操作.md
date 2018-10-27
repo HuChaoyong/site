@@ -51,10 +51,25 @@ wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 
 # rdesktop
 **rdesktop is a tool, which use for connect windows server.
-```
-# connect default (full screen), alt + ctrl + enter   quit full screen
->rdesktop -f 192.168.1.3
 
-# connect and set resolution
+## connect default (full screen),
+> alt + ctrl + enter   quit full screen
+```bash
+rdesktop -f 192.168.1.3
+```
+
+## connect and set resolution
+```bash
 >rdesktop -g 1366*768 192.168.1.3
+```
+
+## connect By user and psw.
+```bash
+rdesktop -f 111.111.222.222 -u Administrator -p 'password'
+```
+
+## connect with enable directory
+>mount local directory [/home/guest/file] to server
+```bash
+rdesktop -f 111.111.222.222 -r disk:myDir=/home/guest/file
 ```

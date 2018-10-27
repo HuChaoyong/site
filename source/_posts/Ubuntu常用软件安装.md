@@ -249,5 +249,12 @@ sudo vi /etc/fstab
 ```
 # idea
 
-> 1. download idea ultimate
-> 2. type  active by server 'http://btsha.com:41017'
+## 1. download idea ultimate
+## 2. install
+## 3. use docker,create a license machine
+```bash
+sudo docker run -d --net=host --restart=always --name jetbrains -p 1212:1212 jbtools/jb
+```
+
+## 4. type license server from docker ip address and port
+>like 'http://localhost:1212'
