@@ -6,6 +6,6 @@ tmp/
 coverage/
 yarn.lock
 package-lock.json
-public/
+blog/
 *.gz
 pk.sh
