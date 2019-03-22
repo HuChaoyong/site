@@ -22,6 +22,16 @@ insert ST_GeomFromText('LINESTRING(103.24 30.28, 103.29 30.33, 103.51 30.15)',43
 insert ST_GeomFromText('POLYGON((103.24 30.28, 103.29 30.33, 103.51 30.15))',4326)
 ```
 
+# update from a exist table
+> update one table from another table, relationship like images
+
+![avator](/img/E-R.png)
+```sql
+update table1 set f_23 = A.f_23, f_24 = A.f_24
+from (select uid, f_23, f_24from temp1) as A
+where table1.year = 2018 and table1.uid = A.uid
+```
+
 # Concat All column value and split column
 ## Concat
 ```sql
