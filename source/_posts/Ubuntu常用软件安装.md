@@ -40,7 +40,7 @@ java -version
 ```
 # tomcat
 
-> downlaod from [Apache tomcat](https://tomcat.apache.org/download-80.cgi), I use tomcat8
+> download from [Apache tomcat](https://tomcat.apache.org/download-80.cgi), I use tomcat8
 ```bash
 # upzip file on directory '/usr/program'
 tar xzvf apache-tomcat-8.5.29.tar.gz -C/usr/program
@@ -258,3 +258,16 @@ sudo docker run -d --net=host --restart=always --name jetbrains -p 1212:1212 jbt
 
 ## 4. type license server from docker ip address and port
 >like 'http://localhost:1212'
+
+# Input method
+
+* you can install sogou input method by anyway for search. but !!!<br>
+after you installed sogou input method, 
+<b>don't</b>  install thrid method or do anything for input method.,<br>
+otherwise, you will not see the sogou input method again.<br>
+(else if you reinstall your operation system. oh, that's boring!)
+
+> oh 
+0
+
+Try rm -rf ~/.config/fcitx and restart ubuntu, this fixed me at least, on xubuntu 16.04

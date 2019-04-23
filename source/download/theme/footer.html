@@ -1,0 +1,52 @@
+</tbody>
+</table>
+</main>
+<div id="footerwrap" class="footer text-center">
+<div class="container">
+  <footer>
+    Power By ***.@2019
+  </footer>
+</div>
+</div>
+</body>
+<script>
+var reg = /htt(p|ps):\/\/.*?\//;
+var baseUrl = '';
+var isRoot = false;
+var href = window.location.href.replace(/\/$/, '');
+if (reg.test(href)) {
+  baseUrl = href.match(reg)[0].replace(/\/$/, '');
+} else {
+  isRoot = true;
+  baseUrl = href;
+}
+$('#list').addClass('table');
+// flow foreach, add a tag on right top.
+// like ['Windows', 'Linux', 'Mac', 'Programer'].forEach((dir) => {
+[].forEach((dir) => {
+var li = document.createElement('li');
+li.className = window.location.href.includes(dir) ? 'active' : '';
+li.innerHTML = `<a id="${dir}" href="${baseUrl + '/' + dir}">${dir}</a>`;
+$('#nav-list')[0].appendChild(li);
+});
+var dir = baseUrl + '/';
+$('#dir-level').text().replace(/^.+?\/|\/$/g, '').split('/').forEach((bread, idx, arr) => {
+dir += bread + '/';
+var li = document.createElement('li');
+if (idx === arr.length - 1) {
+  li.innerHTML = bread;
+  li.className = 'active';
+} else {
+  li.innerHTML = `<a href="${dir}">${bread}</a>`;
+}
+$('.breadcrumb')[0].appendChild(li);
+});
+$('#dir-level').hide();
+if (!isRoot) {
+$('tbody')[0].removeChild($('tbody')[0].firstElementChild);
+}
+document.getElementById('ico').href = baseUrl + '/theme/favicon.ico';
+document.getElementById('img').src = baseUrl + '/theme/logo-small.png';
+</script>
+
+</html>
