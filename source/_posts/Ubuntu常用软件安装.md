@@ -110,9 +110,9 @@ npm -v
 ```
 >
 > if there are some permission like
-> "checkPermissions Missing write access to /home/hcy/node/lib/node_module"
+> "checkPermissions Missing write access to /home/jack/node/lib/node_module"
 ```
-sudo chown -R $(whoami) /home/hcy/node/
+sudo chown -R $(whoami) /home/jack/node/
 ```
 
 # shadowsocks (ss)

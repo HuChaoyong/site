@@ -3,15 +3,15 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hcy's Blog
+title: Jack's Blog
 subtitle: 为何我翻起这尘封的过往，透过字里行间看见你闪烁的泪光.
-author: Hcy
+author: Jack
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.hcy-shmily.com       # Note: don't forget to modify the CNAME file to your url
+url: http://jacklove.ddns.net:8070      # Note: don't forget to modify the CNAME file to your url
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -19,8 +19,8 @@ permalink_defaults:
 #Custom Setting Start
 
 # Site settings
-SEOTitle: Hcy.dev
-email: hcy_wangyi@163.com
+SEOTitle: Jack.dev
+# email: hi@163.com
 description: "a simple boy."
 keyword: ""
 header-img: 
@@ -32,10 +32,10 @@ signature-img:
 # RSS: false
 # weibo_username:     Demonbaneen
 # zhihu_username:     Demonbane
-github_username:    HuChaoyong
-# twitter_username:   HcyShmily
-# facebook_username:  YenYuHsuan
-# linkedin_username:  yu-hsuan-yen
+# github_username:    
+# twitter_username:   
+# facebook_username:  
+# linkedin_username:  
 
 # Build settings
 anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
@@ -55,12 +55,12 @@ duoshuo_share: true                     # set to false if you want to use Commen
 # ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 # Google Analytics
 ga_track_id: 'UA-XXXXXXXX-X'          # Format: UA-xxxxxx-xx
-ga_domain: huchaoyong.github.io
+ga_domain: 
 
 
 # Sidebar settings
 sidebar: true                       # whether or not using Sidebar.
-sidebar-about-description: "Hi, I'm Hcy."
+sidebar-about-description: "Hi, I'm Jack."
 sidebar-avatar: #img/sorata.jpeg     # use absolute URL, seeing it's used in both `/` and `/about/`
 widgets:
 - featured-tags
@@ -176,9 +176,9 @@ sitemap:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: git
-  repository: https://github.com/YenYuHsuan/hexo-theme-beantech.git
-  branch: gh-page
+  # type: git
+  # repository: https://github.com/YenYuHsuan/hexo-theme-beantech.git
+  # branch: gh-page
 
 live2d:
   enable: true

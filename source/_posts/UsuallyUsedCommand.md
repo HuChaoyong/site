@@ -100,3 +100,35 @@ docker build -t sample/tomcat8.5.39 .
 # b8df790a5ce7 is images id
 docker run -d -p 7022:8080 --restart=always --name tomcat8.5.39 -v /media/disk1/tomcat8.5.39/webapps:/usr/local/apache-tomcat-8.5.39/webapps b8df790a5ce7
 ```
+
+# Gradle
+* build.gradle file replace source
+```
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+	id 'war'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.jackshmily'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	// mavenCentral()
+	maven{ url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'mysql:mysql-connector-java'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
+```
