@@ -28,6 +28,11 @@ sudo passwd -l root
 ss -lnt
 ```
 
+* show disk used size
+```bash
+df -hl
+```
+
 # Docker
 
 * list all container

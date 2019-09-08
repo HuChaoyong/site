@@ -70,3 +70,8 @@ select regexp_split_to_table(name, ',') as name from ConcatTB
 select * from information_schema.columns
 where table_schema='public' and table_name='student'
 ```
+
+# add a autogrow field
+```sql
+alter table t1 add gid serial
+```
