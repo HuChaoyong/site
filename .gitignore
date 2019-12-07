@@ -8,4 +8,4 @@ yarn.lock
 package-lock.json
 blog/
 *.gz
-pk.sh
+*.sh

@@ -58,7 +58,10 @@ ngc animal
 
 2. Ubuntu中导出路径是在 ~/.bashrc文件， mac中是 ~/.bash_profile (同上)
 
-3. 测试 (mac中不用执行 source)
+3. 测试 
+```bash
+source ~/.bash_profile
+```
 
 > Success!
 
