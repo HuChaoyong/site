@@ -153,6 +153,27 @@ host: 127.0.0.1
 port: 1080
  then Apply system wide
 
+# trojan (service)
+
+* support .CentOS7+ ，Debian8+，Ubuntu 16.04+
+
+> before install, check the port 80 and 443 is not be listen.
+
+```bash
+wget -N --no-check-certificate https://raw.githubusercontent.com/mark-logs-code-hub/trojan-wiz/master/ins.sh && chmod +x ins.sh && sudo bash ins.sh
+```
+
+```bash
+# check service
+systemctl status trojan-gfw
+# start service
+systemctl start trojan-gfw
+# stop service
+systemctl stop trojan-gfw
+# show client config file.
+cat /home/trojan/client.json
+```
+
 # nginx
 ```bash
 # install 
