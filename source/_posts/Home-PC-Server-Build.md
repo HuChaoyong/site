@@ -31,6 +31,7 @@ you can call your ISP a tell to resolve.
 ## 4. check 
 * use any server on your pc, and set outer port forward to your pc.
 * open the url
+> how to install noip-clien at the end of the arctle.
 
 ## Congratulation ！！！ that'all!
 > now you can use the domain to visit your home PC.
@@ -62,7 +63,39 @@ you can call your ISP a tell to resolve.
 ## 4.检查
 * 任意部署一个服务在你的电脑上，并设置外网端口转发到该服务
 * 通过no-ip的地址+端口，打开你的服务, 能打开就说明成功了！
+> 具体安装 no-ip客户端在文末尾.
 
 ## 恭喜你，
 > 如上步骤仅仅是大致流程，细节请参考搜索具体博客.论坛.
 
+
+# install no-ip client (linux)
+
+## 1.download client file. 
+```bash
+wget https://www.noip.com/client/linux/noip-duc-linux.tar.gz
+
+# after unzip it.
+
+tar zxvf noip-duc-linux.tar.gz -C ~/program
+```
+
+## 2. install
+
+```bash
+cd ~/program/noip-2.1.9-1
+# 
+make
+
+make install
+# after that. will input some info.
+# 1. account for no-ip
+# 2. password for your account
+# 3. set interval time(minutes) default is 30.
+# 4. Do you wish to run something at successful (N).
+```
+
+## 3. run it.
+```bashr
+sudo /usr/local/bin/noip2
+```

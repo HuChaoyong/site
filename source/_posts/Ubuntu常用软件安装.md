@@ -81,26 +81,28 @@ export TOMCAT_HOME=/usr/tomcat/apache-tomcat-8.5.29
 ```
 
 # nodejs
-> download from [NodeJs.org](https://nodejs.org/en/download/)-- select source code
+> download from [NodeJs.org](https://nodejs.org/en/download/)-- 
+* 1. select LTS.
+* 2. select Linux Binaries (x64)
 ```
-tar xzvf node-v8.11.1.tar.gz -C/usr/program
+tar -xvf ./node-v12.16.0-linux-x64.tar.xz -C ~/program
 ```
 > 
 > set environment
 ```
-vi /etc/profile
+vi ~/.bashrc
 ```
 >
 > add flow on the last
 ```
-export NODE_HOME=/usr/program/node-v8.11.1
+export NODE_HOME=/home/jack/program/node-v12.16.0-linux-x64
 export PATH=$PATH:$NODE_HOME/bin
 export NODE_PATH=$NODE_HOME/lib/node_modules
 ```
 >
 > active file
 ```
-source /etc/profile
+source ~./.bashrc
 ```
 >
 > check
@@ -254,6 +256,7 @@ sudo fdisk -l
 >find file system type
 ```
 sudo blkid
+# will show disk info and uuid 
 ```
 > edit config
 ```
@@ -261,13 +264,19 @@ sudo vi /etc/fstab
 ```
 > in the last line ,add flow
 ```
-/dev/sda1		/media/disk		ntfs	defaults	0 	0
-> /dev/sda1  is disk sign
-> /media/disk		where the disk mount
+UUID=10B40A3		/media/disk1		ntfs	defaults	0 	0
+> 10B40A3 is the uuid. from command 
+> /media/disk		where the disk mount   "sudo blkid"
 > ntfs		file system
 >0 (first)	disk backup
 >0 (second)	disk check (0 means don't backup  don't check
 ```
+
+## Important info.
+
+* someday, I install windows 10 on another disk. then, called the disk cann't write file for it.
+* then. you will open your windows 10, and close the function "fast startup ", or called "fast boot"
+
 # idea
 
 ## 1. download idea ultimate
