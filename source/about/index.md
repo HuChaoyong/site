@@ -1,6 +1,7 @@
 ---
 layout: "about"
 title: "关于"
+type: about
 date: 2016-04-21 04:48:33
 description: ""
 header-img: "img/header_img/Iron-Man-3.png"
