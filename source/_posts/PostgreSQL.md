@@ -75,3 +75,31 @@ where table_schema='public' and table_name='student'
 ```sql
 alter table t1 add gid serial
 ```
+
+
+# backup script
+
+```bash
+#!/bin/bash
+
+baseDir="/home/postgres/backup_dir/"
+
+useDir=$baseDir$1
+
+if [ "$1" == "" ]
+then
+        echo "error, please type database name"
+else
+
+	if [ ! -d $useDir ];then
+  		mkdir $useDir
+	fi
+
+        timeStr="`date +%Y%m%d_%H%m`" 
+        echo $timeStr
+        /usr/bin/pg_dump --host 192.102.25.2 --port 5432 --username "pg1" --no-password  --format custom --blobs --verbose --file "${useDir}/${1}_${timeStr}.backup" "${1}"
+        echo "Backup Success !"
+fi
+echo "`date +%Y%m%d_%H%m`"
+
+```
