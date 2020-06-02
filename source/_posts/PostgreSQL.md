@@ -95,11 +95,11 @@ else
   		mkdir $useDir
 	fi
 
-        timeStr="`date +%Y%m%d_%H%m`" 
+        timeStr="`date +%Y%m%d_%H%M`" 
         echo $timeStr
         /usr/bin/pg_dump --host 192.102.25.2 --port 5432 --username "pg1" --no-password  --format custom --blobs --verbose --file "${useDir}/${1}_${timeStr}.backup" "${1}"
         echo "Backup Success !"
 fi
-echo "`date +%Y%m%d_%H%m`"
+echo "`date +%Y%m%d_%H%M`"
 
 ```
