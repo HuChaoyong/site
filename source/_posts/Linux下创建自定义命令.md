@@ -35,7 +35,7 @@ echo "create file success!"
 chmod +x ngc
 ```
 
-2. 编辑 ~/.bashr 文件， 将shell所在文件夹导出为 全局PATH
+2. 编辑 ~/.bashrc 文件， 将shell所在文件夹导出为 全局PATH
 > 我的 shell 所在目录为  /home/root/.shell
 ```bash
 # custom command dir
