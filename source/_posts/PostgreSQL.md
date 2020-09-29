@@ -15,6 +15,9 @@ tags:
 -- insert a wkid 4326 point. langitude 103.24, latitude 30.28
 insert ST_GeomFromText('POINT(103.24 30.28)',4326)
 
+-- update geom field.
+update  test   set  geom = ST_GeomFromText('POINT(' || longitude || ' ' || latitude || ')',4326)
+
 -- insert a line
 insert ST_GeomFromText('LINESTRING(103.24 30.28, 103.29 30.33, 103.51 30.15)',4326)
 
@@ -103,3 +106,15 @@ fi
 echo "`date +%Y%m%d_%H%M`"
 
 ```
+
+# add auto increase column
+
+```sql
+alter table test add column gid serial 
+```
+
+
+
+
+
+
